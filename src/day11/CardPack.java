@@ -19,51 +19,57 @@ public class CardPack {
 	public CardPack() {
 		String shape[] = {"♥", "◆", "♣", "♠"};
 		
+		// i => shape 번지 / j => 숫자 1~13
 		for(int i=0; i<shape.length; i++) {
 			for(int j=1; j<=13; j++) {
-				Card c1 = new Card();
-				c1.setShape(shape[i]);
-				c1.setNum(j);
-				pack[index] = c1;
+				Card c = new Card();
+				c.setShape(shape[i]);
+				c.setNum(j);
+				pack[index] = c;
 				index++;
 			}
 		}
-		
 	}
 	
-	public void CardMix() {
+	// 카드를 섞는 기능 => 배열 안의 값을 랜덤으로 자리 바꾸기
+	public void shuffle() {
 		for(int i=0; i<pack.length; i++) {
-			// 번지를 랜덤으로 선택 (0~4)
-			int index = (int)(Math.random()*pack.length);
+			int random = (int)(Math.random()*pack.length); // 교환 할 랜덤번지
 			// 교환
-			Card t = pack[i];
-			this.pack[i] = this.pack[index];
-			this.pack[index] = t;
-			
+			Card tmp = pack[i];
+			pack[i] = pack[random];
+			pack[random] = tmp;
 		}
 	}
 	
-	public Card CardPick() {
+	// 플레이어에게 나눠주는 기능
+	// pack 배열에 가장 끝 번지의 카드 1장을 리턴
+	// 리턴타입 : 카드 1장 => Card 타입
+	public Card pick() {
+		if(index == 0) {
+			return null;
+		}
 		index--;
 		return pack[index];
-		
 	}
 	
-	public void CardRetrieve() {
-		
+	
+	// 카드를 초기화 기능 (나눠준 카드 회수)
+	public void init() {
+		index = 52;
+		//shuffle();
 	}
 
 	public Card[] getPack() {
 		return pack;
 	}
 
-	public void setPack(Card[] pack) {
-		this.pack = pack;
+	public int getIndex() {
+		return index;
 	}
 
 	@Override
 	public String toString() {
-		return "CardPack [pack=" + Arrays.toString(pack) + ", index=" + index + ", players="
-				+ "]";
+		return "[" +Arrays.toString(pack) + "] / index:" + index;
 	}
 }

@@ -12,47 +12,58 @@ public class CardMain {
 		 * 범위에 없는 숫자면 => 1 => A
 		 * 
 		 */
-		// 카드 팩 객체 생성
-		CardPack c = new CardPack();
-		//c.getPack()[0].print();
-		System.out.println(c);
 		
-		System.out.println("딜러가 카드를 섞고 있습니다");
+		// 카드 팩 객체 생성
+		CardPack cp = new CardPack();
+		//System.out.println(cp);
+		//cp.getPack()[0].print(); // pack의 0번지 Card출력
+		//System.out.println();
+		
 		// 섞기 메서드
-		c.CardMix();
-		System.out.println(c);
+		System.out.println("딜러가 카드를 섞고 있습니다");
+		cp.shuffle();
+		System.out.println(cp);
 		
 		// player 4명
 		System.out.println("딜러가 카드를 나누고 있습니다");
-
 		
 		System.out.println("player1 카드 pick");
 		// 메서드 호출
-		Card c1 = c.CardPick();
+		cp.pick().print();
+		System.out.println();
+		System.out.println(cp.getIndex()); // index가 51 이니까 52번째 카드
+		//Card play1 = cp.pick();
+		
+		System.out.println();
 		System.out.println("player2 카드 pick");
-		Card c2 = c.CardPick();
+		cp.pick().print();
 		// 메서드 호출
+		
+		System.out.println();
 		System.out.println("player3 카드 pick");
-		Card c3 = c.CardPick();
+		cp.pick().print();
 		// 메서드 호출
+		
+		System.out.println();
 		System.out.println("player4 카드 pick");
-		Card c4 = c.CardPick();
+		cp.pick().print();
 		// 메서드 호출
 		
-		System.out.println("player1 Card open!!");
+		//System.out.println("player1 Card open!!");
 		// 카드출력
-		c1.print();
-		System.out.println("player2 Card open!!");
-		c2.print();
+		//play1.print();
+		//System.out.println("player2 Card open!!");
 		// 카드출력
-		System.out.println("player3 Card open!!");
-		c3.print();
+		//System.out.println("player3 Card open!!");
 		// 카드출력
-		System.out.println("player4 Card open!!");
-		c4.print();
+		//System.out.println("player4 Card open!!");
 		// 카드출력
 		
-		// 회수 메서드
+
+		// index를 원래대로 회복 => 52
+		cp.init();
+		System.out.println(cp);
+		
 		
 		// Card c = new Card(!2);
 //		Card c = new Card();

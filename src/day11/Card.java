@@ -18,7 +18,6 @@ public class Card {
 	 */
 	
 	private int num;
-	private String k;
 	private String shape;
 	
 	public Card() {
@@ -36,7 +35,6 @@ public class Card {
 		case 12: System.out.print("Q"); return;
 		case 13: System.out.print("K"); return;
 		default: System.out.print(num);
-		
 		}
 	}
 

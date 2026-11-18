@@ -10,6 +10,7 @@ public class Order {
 	private int total;
 	
 	public Order() {}
+	
 	public Order(Product p, int count) {
 		this.name = p.getName();
 		this.price = p.getPrice();
