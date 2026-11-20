@@ -13,6 +13,7 @@ public class Abstract01 {
 		d.printInfo();
 		d.howl();
 		d.eating("고기");
+		d.name = "별이";
 		
 		//Animal2 a = new Animal2(); => 추상 클래스는 객체 생성 불가능
 	}
@@ -47,7 +48,7 @@ class Dog2 extends Animal2 {
 // 추상클래스를 만들 때는 보통 protected
 // abstract : 상속용
 abstract class Animal2{
-	protected String name;
+	protected String name; // protected 는 일반 변수 처럼 사용 가능하기때문에 getter / setter 안써도됨 private면 접근이 불가능하기 때문에 getter setter를 사용한거..
 	protected String category;
 	
 	public void printInfo() {

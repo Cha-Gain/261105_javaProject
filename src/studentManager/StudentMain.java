@@ -28,7 +28,7 @@ public class StudentMain {
 				sc.searchStudent(scan);
 				break;
 			case 4: // 처리 메서드 호출
-				sc.insertStudent(scan);
+				sc.insertSubject(scan);
 				break;
 			case 5: // 처리 메서드 호출
 				sc.deleteSubject(scan);
