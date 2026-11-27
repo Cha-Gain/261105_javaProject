@@ -1,6 +1,8 @@
 package studentManager2;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Student {
 	// 멤버변수 :학번(기본키), 이름, 전화번호, 생년월일, 주소, 수강과목[] (Subject[])
